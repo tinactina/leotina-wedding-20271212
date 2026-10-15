@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>⁑ leo &amp; tina's Wedding Day ⁑</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+--bg: #FBF6EE;
+--card-bg: #FFFFFF;
+--primary: #E4EEFB;
+--blue: #8FB8EE;
+--accent: #5B8FD6;
+--accent-ink: #3E6FBF;
+--pink: #F4B8D4;
+--blue-accent: #EEF4FC;
+--green-soft: #F8E3C0;
+--green: #FBE9B7;
+--ink: #3B4666;
+--muted: #8A96B0;
+--sage: #C9DEA2;
+box-sizing: border-box;
+padding-top: env(safe-area-inset-top, 0px);
+padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+html { min-height: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+margin: 0; min-height: 100%;
+background: var(--bg); color: var(--ink);
+font-family: "Noto Sans TC", sans-serif; font-weight: 700;
+display: flex; justify-content: center; align-items: flex-start;
+padding: 24px 16px 40px; -webkit-font-smoothing: antialiased;
+}
+@media (min-height: 860px) { body { align-items: center; } }
+.stage { width: 100%; max-width: 410px; }
+
+.card { position: relative; background: var(--card-bg); border: 1.5px solid var(--ink); box-shadow: 0 10px 28px rgba(58,66,86,.07); border-radius: 20px; overflow: hidden; }
+.horizon { height: 18px; background: linear-gradient(var(--primary) 0%, var(--green-soft) 60%, var(--card-bg) 100%); border-bottom: 1.5px solid var(--ink); }
+.land { position: relative; text-align: center; }
+
+/* VI */
+.hero {
+position: relative; height: 380px; border-bottom: 1.5px solid var(--ink); overflow: hidden; cursor: pointer;
+background: linear-gradient(180deg, #E3EEFA 0%, #FBEFF4 62%, #F7F2EC 100%);
+}
+.hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .09; mix-blend-mode: multiply;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.3 0 0 0 0 0.35 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+.hero svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lift { transition: transform .35s cubic-bezier(.34,1.56,.64,1); }
+.hero:hover .lift { transform: translateY(-7px); }
+.hero:hover .p1 { transform: translate(-4px,-10px); }
+.hero:hover .p2 { transform: translate(4px,-12px); }
+.p1, .p2 { transition: transform .4s cubic-bezier(.34,1.56,.64,1); }
+.cover-land { padding: 32px 20px 56px; }
+.date { margin: 0 0 8px; font-size: 26px; font-weight: 900; letter-spacing: .2em; text-indent: .2em; text-align: center; color: var(--ink); }
+.place { margin: 0 0 28px; font-size: 15px; font-weight: 700; letter-spacing: .3em; text-indent: .3em; text-align: center; color: var(--accent-ink); }
+.bunting { position: absolute; left: 0; right: 0; bottom: 0; display: block; width: 100%; height: 26px; }
+
+.btn {
+display: block; width: 100%; max-width: 260px; margin: 0 auto;
+border: 1.5px solid var(--ink); border-radius: 999px; padding: 14px 20px;
+font: inherit; font-weight: 900; font-size: 15px; letter-spacing: .2em;
+color: #fff; background: var(--accent); text-align: center; text-decoration: none; cursor: pointer;
+box-shadow: none; transition: transform .15s ease, background-color .15s ease;
+}
+.btn:hover { transform: translateY(-2px); background-color: #4F83CB; }
+.btn:active { transform: translateY(1px); }
+.btn, .back { position: relative; }
+
+.in-sky { height: 105px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12px; border-bottom: 1.5px solid var(--ink); background: var(--primary); position: relative; }
+.in-sky .with { border: 1.5px solid var(--accent); color: var(--accent-ink); padding: 8px 18px; border-radius: 999px; transform: rotate(-2.5deg); background: #fff; margin: 0; font-size: 20px; line-height: 1; letter-spacing: .3em; text-indent: .3em; font-weight: 900; }
+.in-sky .deco { position: absolute; inset: 0; width: 100%; height: 100%; }
+.in-land { padding: 28px 20px 50px; display: flex; flex-direction: column; align-items: center; }
+.wedding-header { text-align: center; width: 100%; margin-bottom: 20px; }
+.to { margin: 0 0 4px; font-size: 13px; font-weight: 900; color: var(--muted); letter-spacing: .14em; }
+h2 { margin: 0 0 10px; font-size: 24px; letter-spacing: .06em; line-height: 1.25; font-weight: 900; }
+.hl { display: inline-block; background: var(--accent); color: #fff; padding: 0 12px; margin-left: 2px; }
+.lead { margin: 0 auto; max-width: 23em; font-size: 14px; line-height: 1.7; color: #4a5470; }
+
+.info { display: flex; flex-direction: column; gap: 16px; width: 100%; max-width: 350px; margin: 0 auto; align-items: center; }
+.timeline-fusion-box { background: #FCFDFF; border: 1.5px solid var(--ink); border-radius: 18px; padding: 16px; box-shadow: 0 10px 28px rgba(58,66,86,.07); display: flex; flex-direction: column; gap: 12px; width: 100%; }
+.day-badge { display: flex; justify-content: center; width: 100%; }
+.pad { width: 100%; background: #fff; border-radius: 14px; text-align: center; border: 1.5px solid var(--ink); overflow: hidden; }
+.bind { display: flex; justify-content: center; gap: 16px; height: 14px; align-items: center; background: var(--pink); border-bottom: 1.5px solid var(--ink); }
+.bind i { width: 5px; height: 5px; border-radius: 50%; background: #fff; border: 1.5px solid var(--ink); }
+.sheet-top { display: flex; justify-content: space-between; padding: 6px 12px 0; font-size: 11px; font-weight: 900; color: var(--muted); letter-spacing: .05em; }
+.num { font-size: 44px; font-weight: 900; line-height: 1.1; color: var(--accent-ink); padding: 4px 0; }
+.wk { display: flex; justify-content: center; gap: 8px; padding: 0 0 8px; font-size: 11px; font-weight: 900; letter-spacing: .08em; }
+
+.when { background: #fff; border: 1.5px solid var(--ink); border-radius: 14px; padding: 12px; width: 100%; text-align: left; }
+.label { margin: 0 0 8px; font-weight: 900; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; display: flex; align-items: center; gap: 6px; justify-content: center; }
+.schedule-list { display: grid; gap: 8px; }
+.schedule-item { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 9px 12px; background: #fff; border: 1.5px solid var(--ink); border-radius: 10px; }
+.schedule-left { display: flex; align-items: center; gap: 8px; overflow: hidden; }
+.time-highlight { font-size: 11.5px; font-weight: 900; background: var(--green); padding: 3px 6px; border: 1.5px solid var(--ink); border-radius: 6px; flex-shrink: 0; }
+.event-name { font-size: 13px; font-weight: 900; overflow: hidden; text-overflow: ellipsis; }
+.event-badge { font-size: 10px; font-weight: 900; padding: 3px 6px; border-radius: 6px; border: 1.5px solid var(--ink); flex-shrink: 0; }
+.schedule-item.main-reception { border-color: var(--accent-ink); }
+.schedule-item.main-reception .time-highlight { background: var(--accent); color: #fff; }
+.schedule-item.main-reception .event-name { font-size: 14px; color: var(--accent-ink); }
+
+.tag { background: #fff; border-radius: 18px; overflow: hidden; border: 1.5px solid var(--ink); width: 100%; text-align: center; box-shadow: 0 10px 28px rgba(58,66,86,.07); }
+.tag .pat { display: block; width: 100%; height: 32px; border-bottom: 1.5px solid var(--ink); }
+.tag .body { padding: 16px; display: flex; flex-direction: column; align-items: center; }
+.tag .big { margin: 0; font-size: 19px; font-weight: 900; }
+.tag p { margin: 6px 0 0; font-size: 13px; line-height: 1.6; text-align: center; }
+.tag .sub { color: var(--muted); font-weight: 900; font-size: 12px; margin-top: 2px; }
+.notice { margin-top: 10px !important; font-size: 11.5px !important; line-height: 1.5 !important; background: #F1F7E4; padding: 8px 10px; border-radius: 8px; border: 1.5px solid var(--ink); }
+.link { display: inline-block; margin-top: 10px; font-weight: 900; font-size: 13px; color: var(--accent-ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+
+.rsvp { position: relative; overflow: hidden; margin: 16px auto 0; padding: 28px 16px 40px; background: #fff; border: 1.5px solid var(--ink); border-radius: 24px; text-align: center; width: 100%; max-width: 350px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 10px 28px rgba(58,66,86,.07); }
+.rsvp .mini { display: block; width: 50px; height: 50px; margin: 0 auto 4px; }
+.rsvp h3 { margin: 0 0 6px; font-size: 22px; font-weight: 900; letter-spacing: .08em; }
+.deadline { display: block; margin: 0 auto 10px; color: var(--accent-ink); font-size: 12.5px; font-weight: 900; letter-spacing: .06em; }
+.rsvp p { margin: 0 auto 16px; max-width: 20em; font-size: 13px; line-height: 1.6; }
+.rsvp .sign { margin: 18px 0 0; font-size: 17px; font-weight: 900; letter-spacing: .08em; line-height: 1; color: var(--muted); cursor: pointer; }
+.rsvp-strip { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 22px; display: block; border-top: 1.5px solid var(--ink); }
+.back { display: block; margin: 16px auto 0; background: #fff; color: var(--ink); border: 1.5px solid var(--ink); border-radius: 999px; padding: 10px 22px; font: inherit; font-weight: 900; font-size: 13px; cursor: pointer; transition: transform .1s ease; box-shadow: none; }
+.back:hover { transform: translateY(-2px); }
+
+.leaving { animation: away .35s cubic-bezier(.5,0,.8,.4) forwards; }
+@keyframes away { to { transform: translateY(-20px) scale(.97); opacity: 0; } }
+.arriving { animation: rise .45s cubic-bezier(.2,1.2,.4,1) both; }
+@keyframes rise { from { transform: translateY(20px); opacity: 0; } to { transform: none; opacity: 1; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<pattern id="gingham" width="12" height="12" patternUnits="userSpaceOnUse">
+<rect width="12" height="12" fill="#fff"/>
+<rect width="6" height="12" fill="#8FB8EE" opacity=".55"/>
+<rect width="12" height="6" fill="#8FB8EE" opacity=".55"/>
+</pattern>
+<pattern id="dots" width="14" height="14" patternUnits="userSpaceOnUse">
+<rect width="14" height="14" fill="#fff"/>
+<circle cx="4" cy="4" r="1.8" fill="#8FB8EE"/><circle cx="11" cy="11" r="1.8" fill="#F4B8D4"/>
+</pattern>
+<pattern id="zig" width="30" height="24" patternUnits="userSpaceOnUse">
+<rect width="30" height="24" fill="#E4EEFB"/>
+<path d="M0 4Q15 14 30 4" fill="none" stroke="#3B4666" stroke-width="2"/>
+</pattern>
+<pattern id="pStripes" width="40" height="30" patternUnits="userSpaceOnUse">
+<rect width="40" height="30" fill="#F8E3C0"/>
+<rect x="5" width="5" height="30" fill="#fff"/><rect x="15" width="5" height="30" fill="#fff"/>
+<rect x="25" width="5" height="30" fill="#fff"/><rect x="35" width="5" height="30" fill="#fff"/>
+<circle cx="12" cy="10" r="2" fill="#F4B8D4"/>
+</pattern>
+<pattern id="pStars" width="20" height="20" patternUnits="userSpaceOnUse">
+<rect width="20" height="20" fill="#F4B8D4"/>
+<path d="M10 3Q11 8 16 9Q11 10 10 16Q9 10 4 9Q9 8 10 3Z" fill="#fff"/>
+</pattern>
+<g id="sparkle"><path d="M0 -6Q1 -1 6 0Q1 1 0 6Q-1 1 0 6Q-1 -1 0 -6Z"/></g>
+</defs>
+</svg>
+
+<main class="stage">
+
+<!-- cover -->
+<section id="cover" class="card" aria-label="cover">
+<div class="hero" id="openBtn" title="點擊開啟">
+<svg viewBox="0 0 380 380" preserveAspectRatio="xMidYMid meet">
+<defs>
+<filter id="wob" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="3.2"/></filter>
+<clipPath id="ff"><path d="M18 70Q18 58 30 58H122L144 78H340Q352 78 352 90V298Q352 310 340 310H30Q18 310 18 298Z"/></clipPath>
+<pattern id="gingham2" width="12" height="12" patternUnits="userSpaceOnUse"><rect width="12" height="12" fill="#fff"/><rect width="6" height="12" fill="#EE8FB4" opacity=".6"/><rect width="12" height="6" fill="#EE8FB4" opacity=".6"/></pattern>
+<pattern id="stripeB" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="14" height="14" fill="#8DB6E8"/><rect width="7" height="14" fill="#A9C9EF"/></pattern>
+</defs>
+<g filter="url(#wob)" stroke="#3A4256" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">
+<g transform="rotate(-5 190 210)"><path d="M20 70Q20 58 32 58H120L140 76H338Q350 76 350 88V300Q350 312 338 312H32Q20 312 20 300Z" fill="#3A4256" opacity=".14" stroke="none" transform="translate(0 7)"/><path d="M20 70Q20 58 32 58H120L140 76H338Q350 76 350 88V300Q350 312 338 312H32Q20 312 20 300Z" fill="#CFE5B0"/></g>
+<g transform="rotate(3.5 190 210)"><path d="M20 70Q20 58 32 58H120L140 76H338Q350 76 350 88V300Q350 312 338 312H32Q20 312 20 300Z" fill="#3A4256" opacity=".14" stroke="none" transform="translate(0 7)"/><path d="M20 70Q20 58 32 58H120L140 76H338Q350 76 350 88V300Q350 312 338 312H32Q20 312 20 300Z" fill="#F4B0CB"/></g>
+<g class="p1"><g transform="rotate(-7 117 130)"><rect x="52" y="34" width="130" height="190" rx="8" fill="#3A4256" opacity=".14" stroke="none" transform="translate(0 6)"/>
+<rect x="52" y="34" width="130" height="190" rx="8" fill="url(#stripeB)"/>
+<circle cx="96" cy="72" r="22" fill="#F7E58A"/>
+<path d="M112 108a14 14 0 0 1 28 0Z" fill="#EE8FB4"/>
+<path d="M150.0,51.0L152.5,57.5L159.0,60.0L152.5,62.5L150.0,69.0L147.5,62.5L141.0,60.0L147.5,57.5Z" fill="#8DB6E8"/>
+</g></g>
+<g class="p2"><g transform="rotate(6 254 120)"><rect x="192" y="26" width="124" height="190" rx="8" fill="#3A4256" opacity=".14" stroke="none" transform="translate(0 6)"/>
+<rect x="192" y="26" width="124" height="190" rx="8" fill="#FBE3EC"/>
+<path d="M214 28q10 28-4 56t6 60" fill="none" stroke="#8DB6E8" stroke-width="1.8"/>
+<path d="M252 28q-12 26 4 54t-6 56" fill="none" stroke="#EE8FB4" stroke-width="1.8"/>
+<path d="M276 100a16 16 0 0 1 32 0Z" fill="#CFE5B0"/>
+<path d="M290.0,46.0L292.8,53.2L300.0,56.0L292.8,58.8L290.0,66.0L287.2,58.8L280.0,56.0L287.2,53.2Z" fill="#F7E58A"/>
+</g></g>
+<g class="lift"><g transform="translate(0 40)"><path d="M18 70Q18 58 30 58H122L144 78H340Q352 78 352 90V298Q352 310 340 310H30Q18 310 18 298Z" fill="#3A4256" opacity=".14" stroke="none" transform="translate(0 8)"/>
+<path d="M18 70Q18 58 30 58H122L144 78H340Q352 78 352 90V298Q352 310 340 310H30Q18 310 18 298Z" fill="#fff" stroke-width="1.5"/>
+<g clip-path="url(#ff)">
+<rect x="18" y="58" width="334" height="174" fill="#fff"/>
+<rect x="18" y="232" width="74" height="78" fill="#8DB6E8" stroke="none"/>
+<rect x="92" y="232" width="30" height="78" fill="url(#gingham2)" stroke="none"/>
+<rect x="122" y="232" width="88" height="78" fill="#F7E58A" stroke="none"/>
+<rect x="210" y="232" width="60" height="78" fill="#fff" stroke="none"/>
+<rect x="270" y="232" width="82" height="78" fill="#F4B0CB" stroke="none"/>
+<path d="M32 312V278a23 23 0 0 1 46 0V312" fill="none" stroke="#fff" stroke-width="4"/>
+<circle cx="55" cy="274" r="6" fill="#EE8FB4" stroke="none"/>
+<rect x="130" y="246" width="62" height="18" rx="9" fill="#fff" transform="rotate(-8 161 255)"/>
+<rect x="132" y="282" width="62" height="18" rx="9" fill="#fff" transform="rotate(6 163 291)"/>
+<path d="M228 232q-9 14 0 28t0 28t0 28" fill="none" stroke="#8DB6E8" stroke-width="4.5"/>
+<path d="M252 232q9 14 0 28t0 28t0 28" fill="none" stroke="#8DB6E8" stroke-width="4.5"/>
+<circle cx="228" cy="260" r="4.2" fill="#EE8FB4" stroke-width="1.2"/><circle cx="228" cy="288" r="4.2" fill="#EE8FB4" stroke-width="1.2"/>
+<circle cx="256" cy="246" r="4.2" fill="#EE8FB4" stroke-width="1.2"/><circle cx="247" cy="274" r="4.2" fill="#EE8FB4" stroke-width="1.2"/>
+<circle cx="311" cy="271" r="28" fill="none" stroke="#fff" stroke-width="2.5"/>
+<circle cx="311" cy="271" r="18" fill="none" stroke="#fff" stroke-width="2.5"/>
+<path d="M311.0,259.0L313.1,265.9L319.5,262.5L316.1,268.9L323.0,271.0L316.1,273.1L319.5,279.5L313.1,276.1L311.0,283.0L308.9,276.1L302.5,279.5L305.9,273.1L299.0,271.0L305.9,268.9L302.5,262.5L308.9,265.9Z" fill="#F7E58A"/>
+<g transform="rotate(-5 135 100)"><rect x="86" y="88" width="98" height="24" rx="12" fill="none" stroke="#5B8FD6" stroke-width="1.6"/><text x="135" y="104.5" text-anchor="middle" font-family="'Noto Sans TC',sans-serif" font-weight="700" font-size="12" fill="#5B8FD6" stroke="none" letter-spacing=".5">leo &amp; tina</text></g>
+<rect x="86" y="124" width="198" height="46" fill="#E3EEFA" stroke="#5B8FD6" stroke-width="1.6"/>
+<text x="100" y="158" font-family="'Noto Sans TC',sans-serif" font-weight="900" font-size="38" fill="#3E6FBF" stroke="none" letter-spacing="-.5">Wedding</text>
+<rect x="82" y="120" width="8" height="8" fill="#fff" stroke="#5B8FD6" stroke-width="1.4"/><rect x="280" y="120" width="8" height="8" fill="#fff" stroke="#5B8FD6" stroke-width="1.4"/><rect x="82" y="166" width="8" height="8" fill="#fff" stroke="#5B8FD6" stroke-width="1.4"/><rect x="280" y="166" width="8" height="8" fill="#fff" stroke="#5B8FD6" stroke-width="1.4"/>
+<g transform="rotate(-3 185 198)"><rect x="92" y="182" width="186" height="36" fill="#5B8FD6" stroke="none"/><text x="106" y="209" font-family="'Noto Sans TC',sans-serif" font-weight="900" font-size="31" fill="#fff" stroke="none" letter-spacing="-.3">Invitation</text></g>
+<text x="30" y="73" font-family="'Noto Sans TC',sans-serif" font-weight="500" font-size="9" fill="#8993A8" stroke="none" letter-spacing="1">Click to open →</text>
+</g>
+<path d="M18 70Q18 58 30 58H122L144 78H340Q352 78 352 90V298Q352 310 340 310H30Q18 310 18 298Z" fill="none" stroke-width="1.5"/>
+<path d="M18 232H352M92 232V310M122 232V310M210 232V310M270 232V310" fill="none" stroke-width="1.4"/>
+<g transform="rotate(8 300 80)"><rect x="262" y="66" width="76" height="24" fill="url(#gingham)" stroke-width="1.2"/></g>
+</g></g>
+</g>
+<use href="#sparkle" fill="#8DB6E8" transform="translate(36 40) scale(1.6)"/>
+<use href="#sparkle" fill="#EE8FB4" transform="translate(344 50) scale(2)"/>
+<use href="#sparkle" fill="#F7E58A" stroke="#3A4256" stroke-width=".6" transform="translate(348 352) scale(1.6)"/>
+
+</svg>
+</div>
+<div class="horizon"></div>
+<div class="land cover-land">
+<p class="date">2027.12.12 · SUNDAY</p>
+<p class="place">TAIVII HSINCHU</p>
+<button class="btn" id="openBtnAction" type="button">OPEN INVITATION</button>
+<svg class="bunting" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="26" fill="url(#zig)"/></svg>
+</div>
+</section>
+
+<!-- ============ invite ============ -->
+<section id="invite" class="card" aria-label="info" hidden>
+<div class="in-sky">
+<svg class="deco" viewBox="0 0 400 100" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+<circle cx="48" cy="34" r="13" fill="#F4B0CB" stroke="#3A4256" stroke-width="2"/>
+<path d="M88 52a16 16 0 0 1 32 0Z" fill="#CFE5B0" stroke="#3A4256" stroke-width="2"/>
+<path d="M352.0,19.0L354.7,27.5L362.6,23.4L358.5,31.3L367.0,34.0L358.5,36.7L362.6,44.6L354.7,40.5L352.0,49.0L349.3,40.5L341.4,44.6L345.5,36.7L337.0,34.0L345.5,31.3L341.4,23.4L349.3,27.5Z" fill="#8DB6E8" stroke="#3A4256" stroke-width="2" stroke-linejoin="round"/>
+<path d="M290 48q7-12 14 0t14 0" fill="none" stroke="#8DB6E8" stroke-width="4" stroke-linecap="round"/>
+</svg>
+<p class="with" aria-hidden="true">YOU'RE INVITED</p>
+</div>
+<div class="horizon"></div>
+<div class="land in-land">
+<div class="wedding-header">
+<p class="to">To our dear family &amp; friends</p>
+<h2>We're Getting <span class="hl">Married!</span></h2>
+<p class="lead">我們非常期待能與大家分享這份喜悅！</p>
+</div>
+
+<div class="info">
+<div class="timeline-fusion-box">
+<div class="day-badge">
+<div class="pad" aria-hidden="true">
+<div class="bind"><i></i><i></i><i></i></div>
+<div class="sheet-top"><span>2027</span><span>DECEMBER</span></div>
+<div class="num">12</div>
+<div class="wk"><span>日曜日</span><span>SUN</span></div>
+</div>
+</div>
+<div class="when">
+<p class="label"><i class="fa-regular fa-clock"></i> Date &amp; Time</p>
+<div class="schedule-list">
+<div class="schedule-item">
+<div class="schedule-left"><span class="time-highlight">10:30 AM</span><span class="event-name">證婚儀式</span></div>
+<span class="event-badge" style="background:var(--blue-accent);">自由參加</span>
+</div>
+<div class="schedule-item main-reception">
+<div class="schedule-left"><span class="time-highlight">11:30 AM</span><span class="event-name">午宴開始 🥂</span></div>
+<span class="event-badge" style="background:var(--accent); color:#fff;">主要儀式</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tag">
+<svg class="pat" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" fill="url(#pStripes)"/></svg>
+<div class="body">
+<p class="label" style="font-size:11px; color:var(--muted); margin-bottom:2px;">Venue</p>
+<p class="big">TAIVII</p>
+<p class="sub">辛志平校長故居</p>
+<p>新竹市東區東門街32號 (新竹火車站步行5分鐘)</p>
+<p class="notice">⁑ <strong>小提醒：</strong>本場地為百年古蹟，老宅全面禁菸！當天非常歡迎盡情飲酒慶祝，但！若嘔吐汙損場地，館方會和你酌收 $5,000 清潔費，請萬分留意！</p>
+<a class="link" href="https://www.google.com/maps/search/?api=1&query=新竹市東區東門街32號" target="_blank" rel="noopener">在 Google 地圖上查看</a>
+</div>
+</div>
+</div>
+
+<div class="rsvp">
+<svg class="mini" viewBox="0 0 64 64" aria-hidden="true">
+<g transform="rotate(-12 22 34)"><path d="M14 10H30L27 32A5 5 0 0 1 17 32Z" fill="#EEF4FC"/><path d="M15.3 18H28.7L27 32A5 5 0 0 1 17 32Z" fill="#8FB8EE"/><rect x="20.5" y="36" width="3" height="14" fill="#8A96B0"/><rect x="15" y="48" width="14" height="3" rx="1.5" fill="#8A96B0"/></g>
+<g transform="rotate(12 42 34)"><path d="M34 10H50L47 32A5 5 0 0 1 37 32Z" fill="#F8E3C0"/><path d="M35.3 18H48.7L47 32A5 5 0 0 1 37 32Z" fill="#F4B8D4"/><rect x="40.5" y="36" width="3" height="14" fill="#8A96B0"/><rect x="35" y="48" width="14" height="3" rx="1.5" fill="#8A96B0"/></g>
+<use href="#sparkle" fill="#5B8FD6" transform="translate(32 4) scale(.5)"/>
+</svg>
+<h3>RSVP</h3>
+<span class="deadline">請在11.20前填寫完成</span>
+<p>讓我們知道你能否出席及用餐上的需求！</p>
+<button class="btn" id="openRsvpPageBtn" type="button" style="margin-bottom:12px;">填寫出席表單</button>
+<p class="sign" id="secret-trigger" title="開啟管理後台">with love, leo &amp; tina</p>
+<svg class="rsvp-strip" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="100%" fill="url(#pStars)"/></svg>
+</div>
+
+<button class="back" id="backBtn" type="button">Back to Cover</button>
+<svg class="bunting" preserveAspectRatio="none" aria-hidden="true" style="margin-top:20px;"><rect width="100%" height="26" fill="url(#zig)"/></svg>
+</div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section id="rsvp-page" class="card" aria-label="rsvp-page" hidden>
+<div class="in-sky">
+<h3 style="margin:0 0 12px; font-size:22px; font-weight:900;">出席回函與問卷登記</h3>
+</div>
+<div class="horizon"></div>
+<div class="land" style="padding:24px 20px 40px; text-align:left;">
+<div id="rsvp-success-container" style="display:none; text-align:center; padding:10px 0;">
+<div id="rsvp-success-message" style="padding:16px; background:var(--primary); border:1.5px solid var(--ink); border-radius:14px; font-weight:900; margin-bottom:14px;"></div>
+<div id="email-section">
+<p style="font-size:14px; margin-bottom:14px;">請問需要發送 Email 確認信嗎？</p>
+<div style="display:flex; gap:10px; justify-content:center;">
+<button id="send-email-btn" class="btn" style="padding:10px 14px; font-size:14px; flex:1;">Yes</button>
+<button id="skip-email-btn" class="btn" style="background:#fff; color:var(--ink); border:1.5px solid var(--ink); box-shadow:none; padding:10px 14px; font-size:14px; flex:1;">Back to Home</button>
+</div>
+</div>
+<div id="no-email-section" style="display:none;">
+<button id="return-home-btn" class="btn" style="background:var(--primary); color:var(--ink); box-shadow:none; padding:10px 14px; font-size:14px; width:100%;">返回邀請函首頁</button>
+</div>
+</div>
+
+<form id="rsvp-form">
+<div id="step-1" style="display:grid; gap:14px; font-size:13px;">
+<div style="font-size:12px; font-weight:900; background:var(--blue-accent); padding:6px 10px; border-radius:8px; border:1.5px solid var(--ink); text-align:center;">Step 1 / 2：基本資料與出席意願</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">✍️ 請留下你的本名 <span style="color:var(--accent-ink);">*</span></label>
+<input type="text" id="guest-name" required style="padding:10px 12px; border:1.5px solid var(--ink); border-radius:10px; width:100%; font-weight:700; background:#fff; font-family:inherit;" placeholder="真實姓名">
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">📱 你的聯絡電話 <span style="color:var(--accent-ink);">*</span></label>
+<input type="tel" id="guest-phone" required style="padding:10px 12px; border:1.5px solid var(--ink); border-radius:10px; width:100%; font-weight:700; background:#fff; font-family:inherit;" placeholder="0912-345-678">
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">🏷️ 與 leo &amp; tina 的關係是？ <span style="color:var(--accent-ink);">*</span></label>
+<div style="display:grid; gap:6px;">
+<label><input type="radio" name="relation" value="leo 家人" required> leo 家人</label>
+<label><input type="radio" name="relation" value="tina 家人"> tina 家人</label>
+<label><input type="radio" name="relation" value="leo 朋朋 & 同事"> leo 朋朋 &amp; 同事</label>
+<label><input type="radio" name="relation" value="tina 朋朋 & 同事"> tina 朋朋 &amp; 同事</label>
+<label><input type="radio" name="relation" value="其他"> 其他：<input type="text" id="relation-other" placeholder="請輸入說明" style="padding:6px; border:1.5px solid var(--ink); border-radius:8px; width:100%; margin-top:4px; font-weight:700; background:#fff; font-family:inherit;"></label>
+</div>
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">✨ 當天會參加我們的婚禮嗎？ <span style="color:var(--accent-ink);">*</span></label>
+<div style="display:grid; gap:6px;">
+<label><input type="radio" name="attend" value="Yes" required> Yes, 我會準時出席</label>
+<label><input type="radio" name="attend" value="No"> No, 當天無法出席</label>
+</div>
+</div>
+<button type="button" id="next-step-btn" class="btn" style="width:100%; margin-top:8px;">Next ➔</button>
+<button type="button" id="back-to-invite-btn" class="back" style="margin-top:8px;">Back to Home</button>
+</div>
+
+<div id="step-2" style="display:none; gap:14px; font-size:13px;">
+<div style="display:flex; justify-content:space-between; align-items:center; background:var(--blue-accent); padding:6px 10px; border-radius:8px; border:1.5px solid var(--ink);">
+<span style="font-size:12px; font-weight:900;">Step 2 / 2：出席詳細資訊</span>
+<button type="button" id="prev-step-btn" style="background:none; border:none; font-weight:900; cursor:pointer; font-size:12px; color:var(--muted); font-family:inherit;">⬅ 上一步</button>
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">👥 包含你在內，總共出席人數？<span style="color:var(--accent-ink);">*</span></label>
+<div style="display:flex; gap:12px;">
+<label><input type="radio" name="count" value="1位" checked> 1位</label>
+<label><input type="radio" name="count" value="2位"> 2位</label>
+<label><input type="radio" name="count" value="3位"> 3位</label>
+<label><input type="radio" name="count" value="4位"> 4位</label>
+</div>
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">👶 是否有國小以下（含國小）兒童出席？</label>
+<select id="guest-kids" style="padding:10px 12px; border:1.5px solid var(--ink); border-radius:10px; width:100%; font-weight:700; background:#fff; font-family:inherit;">
+<option value="0位">X</option><option value="1位">1位</option><option value="2位">2位</option><option value="3位">3位</option>
+</select>
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">📝 同行親友姓名 <span style="color:var(--accent-ink);">*</span></label>
+<input type="text" id="guest-companion" style="padding:10px 12px; border:1.5px solid var(--ink); border-radius:10px; width:100%; font-weight:700; background:#fff; font-family:inherit;" placeholder="請詳填每位同行人姓名，我們才能製作專屬的座位牌喔！">
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">🍽️ 飲食習慣與過敏原 (可複選)</label>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+<label><input type="checkbox" name="diet" value="葷食"> 葷食</label>
+<label><input type="checkbox" name="diet" value="蛋奶素"> 蛋奶素</label>
+<label><input type="checkbox" name="diet" value="全素"> 全素</label>
+<label><input type="checkbox" name="diet" value="不吃牛肉"> 不吃牛肉</label>
+<label><input type="checkbox" name="diet" value="酒精過敏"> 酒精過敏：）</label>
+</div>
+<input type="text" id="diet-other" placeholder="其他過敏原或特殊需求" style="padding:8px; border:1.5px solid var(--ink); border-radius:8px; width:100%; margin-top:6px; font-weight:700; background:#fff; font-family:inherit;">
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">🚗 當天交通方式 <span style="color:var(--accent-ink);">*</span></label>
+<div style="display:grid; gap:4px;">
+<label><input type="radio" name="transport" value="搭乘大眾運輸" checked> 搭乘大眾運輸 (新竹火車站步行5分鍾)</label>
+<label><input type="radio" name="transport" value="自行開車 / 騎車"> 自行開車 / 騎車</label>
+</div>
+</div>
+<div>
+<label style="display:block; margin-bottom:4px; font-weight:900;">🥂 Cheers～點一首歌吧！</label>
+<textarea id="guest-message" rows="2" style="padding:10px 12px; border:1.5px solid var(--ink); border-radius:10px; width:100%; font-weight:700; background:#fff; font-family:inherit;" placeholder="想對我們說的話？或是就點一首歌吧🎤"></textarea>
+</div>
+<button type="submit" class="btn" style="width:100%; margin-top:8px;">確認送出</button>
+</div>
+</form>
+</div>
+</section>
+
+</main>
+
+<!-- 後台 -->
+<div id="admin-modal" style="position:fixed; inset:0; z-index:100; background:rgba(59,70,102,0.5); display:none; align-items:center; justify-content:center; padding:16px;">
+<div style="background:#fff; border:1.5px solid var(--ink); box-shadow: 0 10px 28px rgba(58,66,86,.07); border-radius:24px; width:100%; max-width:720px; max-height:85vh; display:flex; flex-direction:column; overflow:hidden; padding:20px;">
+<div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1.5px solid var(--ink); padding-bottom:10px; margin-bottom:14px;">
+<div>
+<h3 style="margin:0; font-size:18px; font-weight:900;">🔒 新人專用後台：賓客登記名單</h3>
+<p style="margin:2px 0 0; font-size:11px; color:var(--muted);">即時檢視所有回覆並可一鍵匯出 Excel</p>
+</div>
+<button onclick="closeAdminModal()" style="background:var(--accent); color:#fff; border:1.5px solid var(--ink); width:30px; height:30px; border-radius:50%; font-weight:900; cursor:pointer;">✕</button>
+</div>
+<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; font-weight:900; font-size:12px;">
+<div>總回覆筆數：<span id="total-count" style="color:var(--accent-ink); font-weight:900;">0</span> 筆</div>
+<div style="display:flex; gap:8px;">
+<button onclick="exportToExcel()" style="background:var(--primary); border:1.5px solid var(--ink); padding:6px 12px; border-radius:10px; font-weight:900; cursor:pointer; font-family:inherit;"><i class="fa-solid fa-file-excel"></i> 匯出 Excel</button>
+<button onclick="clearAllData()" style="background:#fff; color:#E58AA8; border:2px solid #E58AA8; padding:6px 10px; border-radius:10px; font-weight:900; cursor:pointer; font-family:inherit;">清空資料</button>
+</div>
+</div>
+<div style="overflow-x:auto; flex:1; border:1.5px solid var(--ink); border-radius:12px; background:#fff;">
+<table style="width:100%; border-collapse:collapse; text-align:left; font-size:11px; font-weight:700;">
+<thead style="background:var(--primary); border-bottom:1.5px solid var(--ink); font-weight:900;">
+<tr><th style="padding:8px;">姓名/電話</th><th style="padding:8px;">關係</th><th style="padding:8px;">出席狀態</th><th style="padding:8px;">人數分配</th><th style="padding:8px;">飲食過敏</th><th style="padding:8px;">交通紀錄</th><th style="padding:8px;">點歌祝福</th><th style="padding:8px;">操作</th></tr>
+</thead>
+<tbody id="guest-table-body"></tbody>
+</table>
+</div>
+<div id="empty-state" style="text-align:center; padding:24px; font-weight:900; color:var(--muted); display:none;">目前尚無任何賓客填寫回函。</div>
+<div style="display:flex; justify-content:flex-end; margin-top:14px;">
+<button onclick="closeAdminModal()" class="back" style="margin:0;">關閉後台</button>
+</div>
+</div>
+</div>
+
+<!-- 密碼驗證 -->
+<div id="password-modal" style="position:fixed; inset:0; z-index:110; background:rgba(59,70,102,0.5); display:none; align-items:center; justify-content:center; padding:16px;">
+<div style="background:#fff; border:1.5px solid var(--ink); box-shadow: 0 10px 28px rgba(58,66,86,.07); border-radius:24px; width:100%; max-width:320px; padding:20px; text-align:center;">
+<h3 style="margin:0 0 6px; font-weight:900; font-size:18px;">後台管理驗證</h3>
+<p style="font-size:12px; color:var(--muted); margin-bottom:10px;">請輸入管理者密碼</p>
+<input type="password" id="admin-pwd-input" style="padding:9px; border:1.5px solid var(--ink); border-radius:10px; width:100%; text-align:center; font-weight:900; font-size:15px; margin-bottom:10px; background:var(--blue-accent); font-family:inherit;" placeholder="••••">
+<div style="display:flex; gap:8px;">
+<button onclick="verifyPassword()" class="btn" style="flex:1; padding:9px; font-size:13px;">登入</button>
+<button onclick="closePasswordModal()" style="background:#fff; border:1.5px solid var(--ink); border-radius:999px; padding:9px 14px; font-weight:900; cursor:pointer; font-family:inherit;">取消</button>
+</div>
+</div>
+</div>
+
+<script>
+const cover = document.getElementById('cover');
+const invite = document.getElementById('invite');
+const rsvpPage = document.getElementById('rsvp-page');
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const heading = invite.querySelector('h2');
+heading.setAttribute('tabindex', '-1');
+
+function swap(from, to, focusEl) {
+const show = () => {
+from.hidden = true;
+from.classList.remove('leaving');
+to.hidden = false;
+if (!reduce) {
+to.classList.add('arriving');
+to.addEventListener('animationend', e => { if (e.target === to) to.classList.remove('arriving'); });
+}
+window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+if (focusEl) focusEl.focus({ preventScroll: true });
+};
+if (reduce) return show();
+from.classList.add('leaving');
+setTimeout(show, 350);
+}
+document.getElementById('openBtn').addEventListener('click', () => swap(cover, invite, heading));
+document.getElementById('openBtnAction').addEventListener('click', () => swap(cover, invite, heading));
+document.getElementById('backBtn').addEventListener('click', () => swap(invite, cover, document.getElementById('openBtnAction')));
+
+const openRsvpPageBtn = document.getElementById('openRsvpPageBtn');
+const backToInviteBtn = document.getElementById('back-to-invite-btn');
+const step1 = document.getElementById('step-1');
+const step2 = document.getElementById('step-2');
+const successContainer = document.getElementById('rsvp-success-container');
+const successMessage = document.getElementById('rsvp-success-message');
+const emailSection = document.getElementById('email-section');
+const noEmailSection = document.getElementById('no-email-section');
+const rsvpForm = document.getElementById('rsvp-form');
+
+openRsvpPageBtn.addEventListener('click', () => {
+step1.style.display = 'grid';
+step2.style.display = 'none';
+successContainer.style.display = 'none';
+rsvpForm.style.display = 'block';
+rsvpForm.reset();
+swap(invite, rsvpPage, document.getElementById('guest-name'));
+});
+backToInviteBtn.addEventListener('click', () => swap(rsvpPage, invite, openRsvpPageBtn));
+
+const nextStepBtn = document.getElementById('next-step-btn');
+const prevStepBtn = document.getElementById('prev-step-btn');
+const sendEmailBtn = document.getElementById('send-email-btn');
+const skipEmailBtn = document.getElementById('skip-email-btn');
+const returnHomeBtn = document.getElementById('return-home-btn');
+const companionInput = document.getElementById('guest-companion');
+
+let currentGuestData = null;
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyCffTnkpnia8rapuFUjhR4WHmnzb-CbrhjX2-zhRliINIEZbHrWtyKYGNZ9hDs4H-Xew/exec';
+
+nextStepBtn.addEventListener('click', () => {
+const relationChecked = document.querySelector('input[name="relation"]:checked');
+const nameVal = document.getElementById('guest-name').value.trim();
+const phoneVal = document.getElementById('guest-phone').value.trim();
+const attendChecked = document.querySelector('input[name="attend"]:checked');
+if (!relationChecked || !nameVal || !phoneVal || !attendChecked) {
+alert('請完整填寫必填欄位！');
+return;
+}
+const attendVal = attendChecked.value;
+if (attendVal === 'No') {
+submitRsvpData({ attend: attendVal, count: '0位', kids: '0位', companion: '無', diet: '未出席', transport: '無', message: '未出席' });
+} else {
+step1.style.display = 'none';
+step2.style.display = 'grid';
+companionInput.setAttribute('required', 'required');
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+});
+
+prevStepBtn.addEventListener('click', () => {
+step2.style.display = 'none';
+step1.style.display = 'grid';
+companionInput.removeAttribute('required');
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+rsvpForm.addEventListener('submit', (e) => {
+e.preventDefault();
+const attendVal = document.querySelector('input[name="attend"]:checked')?.value || '';
+let diets = Array.from(document.querySelectorAll('input[name="diet"]:checked')).map(cb => cb.value);
+const dietOtherText = document.getElementById('diet-other').value.trim();
+if (dietOtherText) diets.push(dietOtherText);
+submitRsvpData({
+attend: attendVal,
+count: document.querySelector('input[name="count"]:checked')?.value || '1位',
+kids: document.getElementById('guest-kids').value || '0位',
+companion: document.getElementById('guest-companion').value.trim() || 'X',
+diet: diets.join(', ') || '無特殊需求',
+transport: document.querySelector('input[name="transport"]:checked')?.value || '',
+message: document.getElementById('guest-message').value.trim()
+});
+});
+
+function submitRsvpData(detailInfo) {
+const relationVal = document.querySelector('input[name="relation"]:checked')?.value || '';
+const relationOtherText = document.getElementById('relation-other').value.trim();
+const finalRelation = relationVal === '其他' && relationOtherText ? `其他: ${relationOtherText}` : relationVal;
+
+currentGuestData = {
+id: Date.now(),
+name: document.getElementById('guest-name').value.trim(),
+phone: document.getElementById('guest-phone').value.trim(),
+relation: finalRelation,
+...detailInfo,
+time: new Date().toLocaleString()
+};
+
+try {
+let guests = JSON.parse(localStorage.getItem('leo_tina_wedding_guests')) || [];
+guests.push(currentGuestData);
+localStorage.setItem('leo_tina_wedding_guests', JSON.stringify(guests));
+} catch (err) { console.log('Local save error:', err); }
+
+fetch(GOOGLE_SCRIPT_URL, {
+method: 'POST',
+mode: 'no-cors',
+headers: { 'Content-Type': 'application/json' },
+body: JSON.stringify(currentGuestData)
+}).catch(err => console.log('Cloud sync error:', err));
+
+const isAttending = currentGuestData.attend === 'Yes';
+if (isAttending) {
+successMessage.innerText = '⁑ 回函登記完成，期待與你相見！';
+emailSection.style.display = 'block';
+noEmailSection.style.display = 'none';
+} else {
+successMessage.innerText = '⁑ 回函登記完成。雖然當天無法相見，但仍非常感謝撥空回覆！';
+emailSection.style.display = 'none';
+noEmailSection.style.display = 'block';
+}
+step1.style.display = 'none';
+step2.style.display = 'none';
+rsvpForm.style.display = 'none';
+successContainer.style.display = 'block';
+window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+sendEmailBtn.addEventListener('click', () => {
+if (!currentGuestData) return;
+const mailSubject = encodeURIComponent("⁑ leo & tina's Wedding Day ⁑ 出 席 登 記 確 認 信");
+const mailBody = encodeURIComponent(
+`⁑ Hi, Dear ${currentGuestData.name} ⁑ 
+
+感謝撥空填寫我們的婚禮出席回函～以下是你填寫的登記資訊：
+
+--------------------------------------------------
+2027.12.12 日 ｜ 11:30 午宴開始 (10:30 證婚儀式可自由參加）
+TAIVII - 辛志平校長故居 (新竹市東區東門街32號)
+
+⁑ 出席狀態：${currentGuestData.attend}
+⁑ 總出席人數：${currentGuestData.count}
+⁑ 國小以下兒童：${currentGuestData.kids}
+⁑ 同行親友：${currentGuestData.companion}
+⁑ 飲食與過敏需求：${currentGuestData.diet}
+⁑ 當天交通方式：${currentGuestData.transport}
+
+--------------------------------------------------
+
+⁑ 交通資訊
+（可在此處補上交通指引、停車資訊或搭車建議）
+
+⁑ 溫馨提醒
+本場地「辛志平校長故居」為百年古蹟，全區全面禁菸！
+當天非常歡迎盡開乾杯慶祝，但！若是不小心嘔吐汙損場地，館方會和你酌收 $5,000 清潔費，請大家守護荷包、萬分留意 🥂！
+
+with love,
+leo & tina see you there.`
+);
+window.location.href = `mailto:?subject=${mailSubject}&body=${mailBody}`;
+swap(rsvpPage, invite, openRsvpPageBtn);
+});
+skipEmailBtn.addEventListener('click', () => swap(rsvpPage, invite, openRsvpPageBtn));
+returnHomeBtn.addEventListener('click', () => swap(rsvpPage, invite, openRsvpPageBtn));
+
+let clickCount = 0;
+let clickTimer = null;
+document.getElementById('secret-trigger').addEventListener('click', () => {
+clickCount++;
+clearTimeout(clickTimer);
+if (clickCount >= 3) { clickCount = 0; openAdminModal(); }
+else { clickTimer = setTimeout(() => { clickCount = 0; }, 1000); }
+});
+
+const CORRECT_SHA256 = "2bfb416fc62c76e279b9a67a07204961e695d73cc277f240fcb6408cd530c313";
+
+async function hashString(str) {
+const data = new TextEncoder().encode(str);
+const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+return Array.from(new Uint8Array(hashBuffer)).map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+function openAdminModal() { document.getElementById('password-modal').style.display = 'flex'; document.getElementById('admin-pwd-input').focus(); }
+function closePasswordModal() { document.getElementById('password-modal').style.display = 'none'; }
+async function verifyPassword() {
+const inputVal = document.getElementById('admin-pwd-input').value;
+const hashedInput = await hashString(inputVal);
+if (hashedInput === CORRECT_SHA256) {
+closePasswordModal();
+document.getElementById('admin-pwd-input').value = '';
+renderGuestTable();
+document.getElementById('admin-modal').style.display = 'flex';
+} else {
+alert('密碼錯誤！');
+document.getElementById('admin-pwd-input').value = '';
+}
+}
+function closeAdminModal() { document.getElementById('admin-modal').style.display = 'none'; }
+
+function getGuests() { try { return JSON.parse(localStorage.getItem('leo_tina_wedding_guests')) || []; } catch (e) { return []; } }
+
+function renderGuestTable() {
+const tbody = document.getElementById('guest-table-body');
+const emptyState = document.getElementById('empty-state');
+tbody.innerHTML = '';
+const guests = getGuests();
+document.getElementById('total-count').innerText = guests.length;
+if (guests.length === 0) { emptyState.style.display = 'block'; return; }
+emptyState.style.display = 'none';
+guests.forEach((g) => {
+const tr = document.createElement('tr');
+tr.style.borderBottom = "1px solid #ddd";
+tr.innerHTML = `
+<td style="padding:8px; font-weight:900;">${g.name}<br><span style="font-weight:700; color:var(--muted); font-size:10px;">${g.phone}</span></td>
+<td style="padding:8px;">${g.relation}</td>
+<td style="padding:8px;"><span style="background:var(--primary); padding:2px 6px; border-radius:6px; border:1px solid var(--ink);">${g.attend}</span></td>
+<td style="padding:8px;">人數: ${g.count}<br>兒童: ${g.kids || '0位'}<br><span style="font-size:10px; color:var(--muted);">同行: ${g.companion}</span></td>
+<td style="padding:8px; max-width:90px; overflow:hidden; text-overflow:ellipsis;">${g.diet}</td>
+<td style="padding:8px;">${g.transport}</td>
+<td style="padding:8px; max-width:100px; overflow:hidden; text-overflow:ellipsis;">${g.message || '無'}</td>
+<td style="padding:8px;"><button onclick="deleteGuest(${g.id})" style="background:none; border:none; color:#E58AA8; font-weight:900; cursor:pointer;"><i class="fa-solid fa-trash"></i></button></td>
+`;
+tbody.appendChild(tr);
+});
+}
+
+function exportToExcel() {
+const guests = getGuests();
+if (guests.length === 0) { alert('目前沒有資料！'); return; }
+let csv = "\uFEFF填寫時間,姓名,電話,關係,出席狀態,出席人數,國小以下兒童,同行親友,飲食過敏,交通,點歌祝福\n";
+guests.forEach(g => {
+csv += `"${g.time}","${g.name}","${g.phone}","${g.relation}","${g.attend}","${g.count}","${g.kids || '0位'}","${g.companion}","${g.diet}","${g.transport}","${(g.message||'').replace(/"/g,'""')}"\n`;
+});
+const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+const a = document.createElement('a');
+a.href = URL.createObjectURL(blob);
+a.download = `wedding_guests_${new Date().toISOString().slice(0,10)}.csv`;
+a.click();
+}
+
+function deleteGuest(id) {
+if (confirm('確定刪除此筆資料？')) {
+const guests = getGuests().filter(g => g.id !== id);
+localStorage.setItem('leo_tina_wedding_guests', JSON.stringify(guests));
+renderGuestTable();
+}
+}
+function clearAllData() {
+if (confirm('確定清空所有回覆資料？')) {
+localStorage.removeItem('leo_tina_wedding_guests');
+renderGuestTable();
+}
+}
+</script>
+</body>
+</html>
